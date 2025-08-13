@@ -1,7 +1,34 @@
 // За допомогою циклу вивести всю інформацію про користувачів, використовуючи шаблон
 // за допомогою стилів, побудувати сітку по 2 об’єктах в рядок
 
-let usersList = [
+type GeoType = {
+    lat: string,
+    lng: string
+}
+type AdressType = {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: GeoType
+}
+type CompanyType = {
+    name: string,
+    catchPhrase: string,
+    bs: string
+}
+type UserListType = {
+    id: number,
+    name: string,
+    username: string,
+    email: string,
+    address: AdressType
+    phone: string,
+    website: string,
+    company: CompanyType
+};
+
+let usersList38: UserListType[] = [
     {
         id: 1,
         name: 'Leanne Graham',
@@ -234,14 +261,15 @@ let usersList = [
     }
 ];
 
-for (const Element of usersList) {
-    for (let fieldElement in Element) {
-        console.log(fieldElement, Element[fieldElement]);
+for (const Element of usersList38) {
+    for (const key of Object.keys(Element)) {
+        const value = (Element as any)[key];
+        console.log(key, value);
     }
 }
     document.write(`<div class="cards">`);
-for (let i = 0; i < usersList.length; i++) {
-    const user = usersList[i];
+for (let i = 0; i < usersList38.length; i++) {
+    const user = usersList38[i];
     document.write (`<div class="card">
                            <p>${user.id}</p>
                            <h3>${user.name}</h3>
