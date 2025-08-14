@@ -6,7 +6,13 @@
 //
 // –написати пошук всіх об’єктів, в яких в modules є docker
 
-let coursesArray = [
+interface ICourseArray {
+    title: string,
+    monthDuration: number,
+    hourDuration: number,
+    modules: string[]}
+
+const coursesArray: ICourseArray []= [
     {
         title: 'JavaScript Complex',
         monthDuration: 5,
