@@ -24,7 +24,9 @@
 //
 //  — за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 
-let coursesAndDurationArray = [
+type coursesArray = {title: string, monthDuration: number};
+// @ts-ignore
+const coursesAndDurationArray: coursesArray[] = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
     {title: 'Python Complex', monthDuration: 6},
