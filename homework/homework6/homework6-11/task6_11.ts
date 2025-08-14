@@ -9,8 +9,6 @@ const cardSuits: string[] = ['spade', 'diamond','heart', 'club'];
 // @ts-ignore
 const values: string [] = ['6', '7', '8', '9', '10', 'ace','jack','queen','king'];
 
-
-
 // @ts-ignore
 const cards: Card[] = [];
 for (const cardSuit of cardSuits ) {
