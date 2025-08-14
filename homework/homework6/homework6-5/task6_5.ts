@@ -7,7 +7,7 @@
 // let arr = stringToarray(str); [‘Ревуть’, ‘воли’, ‘як’, ‘ясла’, ‘повні’]
 
 
-function stringToarray(str) {
+function stringToarray(str: string): string[] {
     if (str) {
         const split = str.split(' ');
         return split;
