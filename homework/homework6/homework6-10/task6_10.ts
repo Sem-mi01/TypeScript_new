@@ -28,10 +28,13 @@
 //
 // }
 
+// @ts-ignore
 const cardSuits:string[] = ['spade', 'diamond','heart', 'clubs'];
+// @ts-ignore
 const values: string [] = ['6', '7', '8', '9', '10', 'ace','jack','queen','king'];
 
 type Card = {cardSuit: string, value: string, color?: string};
+// @ts-ignore
 const cards: Card[] = [];
 for (const cardSuit of cardSuits ) {
     for (const value of values) {
