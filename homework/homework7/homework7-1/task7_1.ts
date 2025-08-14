@@ -7,8 +7,9 @@
 // @ts-ignore
 class UserClass {
 
-    constructor(private id: number, private name: string, private surname: string, private email: string, private phone: string) {
-    }
+    constructor(
+        private id: number, private name: string, private surname: string, private email: string, private phone: string
+    ) {}
 
 }
 // @ts-ignore
