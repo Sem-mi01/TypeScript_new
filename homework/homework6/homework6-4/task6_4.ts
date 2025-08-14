@@ -2,8 +2,8 @@
 //
 // – Є “брудна” стрінга let str = ‘ dirty string   ‘ . Почистити її від зайвих пробілів.
 
-let str = ' dirty string   ';
-const s = str.trim();
+let str: string = ' dirty string   ';
+const s: string = str.trim();
 console.log(s);
 
 // перевірка
