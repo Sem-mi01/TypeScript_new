@@ -3,9 +3,11 @@
 // – Перевести до нижнього регістру наступні стрінгові значення
 //
 //       ‘HELLO WORLD’, ‘LOREM IPSUM’, ‘JAVASCRIPT IS COOL’
-
-let s1 = 'HELLO WORLD';
-let s2 = 'LOREM IPSUM';
-let s3 = 'JAVASCRIPT IS COOL';
+// @ts-ignore
+let s1: string = 'HELLO WORLD';
+// @ts-ignore
+let s2: string = 'LOREM IPSUM';
+// @ts-ignore
+let s3: string = 'JAVASCRIPT IS COOL';
 console.log(s1.toLowerCase() + ';' + s2.toLowerCase() + ';' + s3.toLowerCase() + ';');
 
