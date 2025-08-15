@@ -2,20 +2,8 @@
 
 // – Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 
-// @ts-ignore
-class UserClass {
 
-    constructor(
-        private _id: number, private _name: string, private _surname: string, private _email: string, private _phone: string
-    ) {}
-    get id() { return this._id; }
-    get name() { return this._name; }
-    get surname() { return this._surname; }
-    get email() { return this._email; }
-    get phone() { return this._phone; }
-}
-// @ts-ignore
-let users: UserClass[] = [
+let users73: UserClass[] = [
     new UserClass(4, 'Roman', 'Ivanenko', 'Ivanenko@gmail.com', '5674531'),
     new UserClass(9,  'Katerina',  'Pruhodko', 'Pruhodko@gmail.com',  '5674532'),
     new UserClass(3,  'Polina',  'Gnatenko',  'Gnatenko@gmail.com',  '5674533'),
@@ -29,5 +17,4 @@ let users: UserClass[] = [
 ]
 
 // @ts-ignore
-const sorted: UserClass[] = [...users].sort((a: UserClass, b: UserClass) => a.id - b.id);
-console.log(sorted);
+console.log(users.sort((user1: UserClass, user2: UserClass)=> user1.id - user2.id));
