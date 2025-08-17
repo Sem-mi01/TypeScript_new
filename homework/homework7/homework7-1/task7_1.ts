@@ -19,11 +19,6 @@ class User7 {
         this._id = value;
     }
 }
-// @ts-ignore
-let user7 = new User7(1, 'asd', 'asd', 'asd');
-console.log(user7.id);
-user7.id = 123
-
 
 // @ts-ignore
 let users: User7[] = [
