@@ -12,35 +12,54 @@
 //
 //     — addDriver (driver) – приймає об’єкт який “водій” з довільним набором полів, і додає його в поточний об’єкт car
 
-function Car(model, manufacturer, year, maxSpeed, engineCapacity) {
-    this.model = model
-    this.manufacturer = manufacturer
-    this.year = year
-    this.maxSpeed = maxSpeed
-    this.engineCapacity = engineCapacity
-    this.drive = function (){
-        console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)
-    }
-    this.info = function () {
-        for (const infoCar in this) {
-            console.log(infoCar, this[infoCar] );
-        }
-    }
-    this.increaseMaxSpeed = function (newSpeed) {
-        if (newSpeed > 0) this.maxSpeed = this.maxSpeed + newSpeed;
-    }
-    this.changeYear = function (newValue) {
-        if (year > 1885) this.year = year;
-    }
-    this.addDriver = function (driver) {
-        if (driver) this.driver = driver;
+class Car {
+
+    model: string;
+    producer: string;
+    year: number;
+    maxSpeed: number;
+    engineVolume: number;
+    driver?: any;
+
+    constructor(model: string, producer: string, year: number, maxSpeed: number, engineVolume: number) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
     }
 
+    drive(): void {
+        console.log(`\u{1F697} їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    }
+
+    info(): void {
+        for (const key in this) {
+
+            // @ts-ignore
+            console.log(key, (this as any)[key]);
+        }
+    }
+
+    increaseMaxSpeed(speedToAdd: any): void {
+        if (speedToAdd > 0) this.maxSpeed = this.maxSpeed + speedToAdd;
+    }
+
+    changeYear(year: any): void {
+        if (year > 1815) this.year = year;
+    }
+
+    addDriver(driver: any): void {
+        if (driver) this.driver = driver;
+    }
 }
-const car = new Car('BMW', 'BMW Group', 2022, 220, 2);
-    car.drive();
-    car.info();
-    car.increaseMaxSpeed (100);
-    car.changeYear(2024);
-    car.addDriver({name:'Vasya', age: 25});
-    console.log(car)
+
+const car = new Car('asd', 'qwe', 1234, 122, 4);
+console.log(car);
+
+car.drive();
+car.info();
+car.increaseMaxSpeed(100);
+car.changeYear(2000);
+car.addDriver({ name: 'Ivan', lic: true });
+
