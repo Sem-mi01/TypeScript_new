@@ -4,6 +4,7 @@
 //
 // створити пустий масив, наповнити його 10 об’єктами Client
 
+// @ts-ignore
 class Product {
     title: string;
     price: number;
@@ -14,6 +15,7 @@ class Product {
         this.price = price;
     }
 }
+// @ts-ignore
 class Client{
     id: number;
     name: string;
@@ -42,7 +44,7 @@ const client = new Client(
     [new Product('tv',23000),
     new Product('phone', 12000)]
 );
-
+// @ts-ignore
 let clients = [
     new Client(1, 'Roman', 'Ivanenko', 'Ivanenko@gmail.com', '5674531',[{title: 'tv', price: 23000}, {title: 'phone', price: 12000}]),
     new Client(2,  'Katerina',  'Pruhodko', 'Pruhodko@gmail.com',  '5674532', [{title: 'PlayStation', price: 25000}, {title: 'headphone', price: 2900}]),

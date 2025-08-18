@@ -1,8 +1,6 @@
-// #nkMXISv
+// #8abtVjRv
 //
-// – створити конструктор для об’єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
-//
-// створити пустий масив, наповнити його 10 об’єктами Client
+// – Взяти масив (Client [] з попереднього завдання). Відсортувати його за кількістю товарів в полі order по зростанню. (sort)
 
 function Client(id, name, surname , email, phone, order) {
     this.id = id;
