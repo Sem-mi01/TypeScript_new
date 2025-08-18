@@ -4,36 +4,43 @@
 //
 // створити пустий масив, наповнити його 10 об’єктами Client
 
-// function Client(id, name, surname , email, phone, order) {
-//     this.id = id;
-//     this.name = name;
-//     this.surname = surname;
-//     this.email = email;
-//     this.phone = phone;
-//     this.order = order;
-// }
+class Product {
+    title: string;
+    price: number;
 
-// для продукта можна створити окрему конструкцію:
-function Client(id: number, name: string, surname: string , email: string, phone: string, ...products: string): void {
-    this.id = id;
-    this.name = name;
-    this.surname = surname;
-    this.email = email;
-    this.phone = phone;
-    this.order = products;
+
+    constructor(title: string, price: number) {
+        this.title = title;
+        this.price = price;
+    }
 }
-function Product(title: string, price:string | number): void {
-    this.title = title;
-    this.price = price;
+class Client{
+    id: number;
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    products: Product[]
+
+
+    constructor(id: number, name: string, surname: string, email: string, phone: string, products: Product[]) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.products = products;
+    }
 }
 
-const client = new Client(1,
+const client = new Client(
+    1,
     'Roman',
     'Ivanenko',
     'Ivanenko@gmail.com',
     '5674531',
-    new Product('tv',23000),
-    new Product('phone', 12000)
+    [new Product('tv',23000),
+    new Product('phone', 12000)]
 );
 
 let clients = [
@@ -51,11 +58,9 @@ let clients = [
     new Client(10,  'Bogdan', 'Magdenko', 'Magdenko@gmail.com',  '56745310', [{title:
             'swimming pool', price: 6000}, {title: 'fireplace', price: 15000}]),
 ];
-console.log(client.order);
+console.log(client.products);
 
-clients.forEach((client, index) => {
-    console.log(`client ${index + 1}:`);
-    console.log(client.order);
-});
+const sortedProducts = clients.sort((a, b) => a.products.length - b.products.length);
+console.log(sortedProducts);
 
 
