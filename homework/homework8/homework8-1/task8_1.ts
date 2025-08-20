@@ -22,12 +22,14 @@
 //
 //     Зробити все ВИКЛЮЧНО за допомогою інлайн конструкції
 
-interface ICoursesAndDurationArray {
+interface ICourse1 {
     title: string,
     monthDuration: number
 }
-
-const courses: ICoursesAndDurationArray [] = [
+interface ICourse2 extends ICourse1 {
+    id: number,
+}
+const courses: ICourse1 [] = [
 
 {title: 'JavaScript Complex', monthDuration: 5},
 
@@ -44,4 +46,4 @@ const courses: ICoursesAndDurationArray [] = [
 ];
 
 
-console.log(courses.map((course, index) => ({ id: index + 1, ...course})));
+console.log(courses.map<ICourse2>((course, index) => ({ id: index + 1, ...course})));
