@@ -59,5 +59,9 @@ let clients: Client[] = [
 ];
 console.log(client.products);
 
+clients.forEach((client, index) => {
+    console.log(`client ${index + 1}:`);
+    console.log(client.products);
+});
 
 
