@@ -22,6 +22,7 @@ class Prince {
    name: string;
    age: number;
    shoe: number;
+   wife?: Cinderella;
 
     constructor(name: string, age: number, shoe: number) {
         this.name = name;
@@ -46,6 +47,10 @@ const prince = new Prince('Jozef', 20, 35);
 
 const princessa = cinderellas.find(cinderella => cinderella.footSize === prince.shoe);
 
+if (princessa){
+    prince.wife = princessa
+    console.log(princessa.age);
+}
 console.log(princessa);
 
 
