@@ -12,54 +12,51 @@
 //
 //     — addDriver (driver) – приймає об’єкт який “водій” з довільним набором полів, і додає його в поточний об’єкт car
 
-class Car {
-
+// @ts-ignore
+type Car = {
     model: string;
     producer: string;
     year: number;
     maxSpeed: number;
     engineVolume: number;
     driver?: any;
+    drive(): void;
+    info(): void;
+    increaseMaxSpeed(speedToAdd: number): void;
+    changeYear(year: number): void;
+    addDriver(driver: any): void;
+};
 
-    constructor(model: string, producer: string, year: number, maxSpeed: number, engineVolume: number) {
-        this.model = model;
-        this.producer = producer;
-        this.year = year;
-        this.maxSpeed = maxSpeed;
-        this.engineVolume = engineVolume;
-    }
-
-    drive(): void {
-        console.log(`\u{1F697} їдемо зі швидкістю ${this.maxSpeed} на годину`);
-    }
-
-    info(): void {
-        for (const key in this) {
-
-            // @ts-ignore
-            console.log(key, (this as any)[key]);
-        }
-    }
-
-    increaseMaxSpeed(speedToAdd: any): void {
-        if (speedToAdd > 0) this.maxSpeed = this.maxSpeed + speedToAdd;
-    }
-
-    changeYear(year: any): void {
-        if (year > 1815) this.year = year;
-    }
-
-    addDriver(driver: any): void {
-        if (driver) this.driver = driver;
-    }
+function createCar(model: string, producer: string, year: number, maxSpeed: number, engineVolume: number): Car {
+    return {
+        model, producer, year, maxSpeed, engineVolume,
+        drive() {
+            console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+        },
+        info() {
+            for (const key in this)
+                console.log(key, (this as any)[key]);
+        },
+        increaseMaxSpeed(s: number) {
+            if (s > 0) this.maxSpeed += s;
+        },
+        changeYear(y: number) {
+            if (y > 1815) this.year = y;
+        },
+        addDriver(d: any) {
+            if (d) this.driver = d;
+        },
+    };
 }
 
-const car = new Car('asd', 'qwe', 1234, 122, 4);
+
+// @ts-ignore
+const car = createCar('asd', 'qwe', 1234, 122, 4);
 console.log(car);
 
 car.drive();
 car.info();
 car.increaseMaxSpeed(100);
 car.changeYear(2000);
-car.addDriver({ name: 'Ivan', lic: true });
-
+car.addDriver({});
+console.log(car);
