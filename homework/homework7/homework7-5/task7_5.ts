@@ -5,7 +5,7 @@
 
 
 const sort = clients.sort((a, b) => {
-    return a.product.length - b.product.length
+    return a.products.length - b.products.length
 });
 console.log(sort);
 
